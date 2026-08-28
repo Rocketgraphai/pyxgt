@@ -48,7 +48,7 @@ $ pip install --upgrade grpcio jupyter pandas protobuf xgt
 
 If you need a Python first, [anaconda](https://anaconda.org/) brings one along
 with Jupyter. Otherwise `brew install python3` on macOS, `sudo apt install
-python3 python3-dev python3-pip` on debian-based systems, or `sudo yum install
+python3 python3-dev python3-pip python3-venv` on debian-based systems, or `sudo yum install
 python3 python3-devel python3-pip` where `yum` is the package manager.
 
 On a system that manages its own Python packages, pip may refuse to install into
