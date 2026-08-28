@@ -88,11 +88,25 @@ $ pip install --upgrade boto3 grpcio jupyter pandas protobuf xgt
 
 ### Server Setup
 
-Running the Rocketgraph xGT application can be done in a variety of locations.
+#### The installer
+
+The quickest way to get a server running is the
+[Rocketgraph installer](https://github.com/Rocketgraphai/install), which covers
+Windows, macOS and Linux. It brings its own dependencies, including Docker, sets
+the containers going and opens
+[Mission Control](https://rocketgraph.com/introduction-to-mission-control/) in
+your browser when it is done.
+
+On Linux or macOS that is one command:
+
+```bash
+$ curl -sSL https://install.rocketgraph.com/install.sh | sh
+```
+
+Windows and macOS have graphical installers, listed in that repository.
 
 #### On AWS
 
-1.  A quick launch of the xGT stack on AWS using CloudFormation:  [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=region#/stacks/new?stackName=trovaresxgt&templateURL=https://trovaresxgt.s3.us-west-2.amazonaws.com/cfxgt.json)
 1.  Running xGT on your own AWS instances from the [AWS Marketplace](https://aws.amazon.com/marketplace).
     * This process requires subscribing to the [Rocketgraph xGT product](https://aws.amazon.com/marketplace/pp/B09QXZBS55). 
     * All AWS instances with 8 vCPUs or fewer are free for the software; AWS charges for the hardware may apply.
