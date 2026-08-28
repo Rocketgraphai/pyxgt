@@ -12,11 +12,7 @@
 
 #### GitHub
 
-[![GitHub stars](https://img.shields.io/github/stars/trovares/pyxgt.svg?style=social&label=Stars)](https://github.com/trovares/pyxgt)
-
-#### Social Media
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/TrovaresxGT)](https://twitter.com/TrovaresxGT)
+[![GitHub stars](https://img.shields.io/github/stars/Rocketgraphai/pyxgt.svg?style=social&label=Stars)](https://github.com/Rocketgraphai/pyxgt)
 
 [Rocketgraph xGT](https://www.rocketgraph.com/) is the fastest Deep Analytics Platform on the market and perfect for your mission-critical applications.
 With performance speeds 100's of times that of current market options, you can now empower your data scientist with the best development environment to meet your needs.
@@ -53,7 +49,7 @@ An alternative to the anaconda prompt/command-line method, is to launch a Jupyte
 
 #### Command-line on Mac
 
-The first step on a Mac is to ensure that a Python (version 3.9 - 3.13) is installed along with a `pip` package.
+The first step on a Mac is to ensure that a Python (version 3.10 - 3.14) is installed along with a `pip` package.
 If you are using [Homebrew](https://brew.sh) as your package manager, these packages can be installed by doing this command in a `Terminal` window (or your favorite alternative to a `bash` shell):
 
 ```bash
@@ -62,7 +58,7 @@ $ brew install python3
 
 #### Command-line on Linux
 
-The first step on a native Linux platform is to ensure that a Python (version 3.9 - 3.13) is installed.
+The first step on a native Linux platform is to ensure that a Python (version 3.10 - 3.14) is installed.
 For those distributions that use RPM and the `yum` package manager:
 
 ```bash
@@ -81,10 +77,14 @@ After these O/S packages are installed, the Python packages can be installed:
 $ pip install --upgrade boto3 grpcio jupyter pandas protobuf xgt
 ```
 
-Note that on some systems, `pip` will invoke the deprecated Python2 system.
-If this is the case, then you will need to do `pip3` wherever `pip` is shown in commands.
-Also note that you may be required to install these `pip` packages in your user environment.
-This is done by appending `--user` at the end of a `pip` command.
+On a system that manages its Python packages, pip may refuse to install into it.
+A virtual environment is the usual answer:
+
+```bash
+$ python3 -m venv xgt-env
+$ source xgt-env/bin/activate
+$ pip install --upgrade boto3 grpcio jupyter pandas protobuf xgt
+```
 
 ### Server Setup
 
@@ -106,10 +106,8 @@ Running the Rocketgraph xGT application can be done in a variety of locations.
 
 1.  A docker daemon running on your platform (on-premises).
     * Any x86 system running docker can be used.
-    * There are two versions available;
-      - The `trovares/xgt` image where the application runs as the root user.
-    * Perform the equivalent of `docker pull trovares/xgt`.
-    * More information is available at [trovares/xgt](https://hub.docker.com/r/trovares/xgt).
+    * Perform the equivalent of `docker pull rocketgraph/xgt`.
+    * More information is available at [rocketgraph/xgt](https://hub.docker.com/r/rocketgraph/xgt).
 1.  A docker daemon (docker desktop) running on your laptop.
     * The [docker desktop](https://www.docker.com/get-started) hosting environment can run on:
         - Windows (with WSL2 enabled)
