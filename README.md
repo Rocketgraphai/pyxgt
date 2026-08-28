@@ -17,79 +17,17 @@
 [Rocketgraph xGT](https://www.rocketgraph.com/) is the fastest Deep Analytics Platform on the market and perfect for your mission-critical applications.
 With performance speeds 100's of times that of current market options, you can now empower your data scientist with the best development environment to meet your needs.
 
-## Demos
-
-There are several [demo notebooks](demos/) available within this repo.
-
 ## Getting Started
 
-You need to set up a Rocketgraph xGT server on a platform that makes sense for you, and set up a Python environment from which the Rocketgraph xGT client is run.
-It is best to set up your client environment first as some Python packages are needed in order to set up some of the server environments.
+Two pieces: a Rocketgraph server, and the Python client you talk to it with.
 
-### Client Setup
+### Install Rocketgraph
 
-The client can run from any Python environment, including Jupyter Notebook and Jupyter Lab.
-
-#### Anaconda
-
-One of the easiest ways to get a Jupyter environment is to install [anaconda](https://anaconda.org/).
-Once installed, open an "anaconda prompt" window and run these commands:
-
-```Python
-pip install --upgrade grpcio jupyter pandas protobuf xgt
-```
-
-An alternative to the anaconda prompt/command-line method, is to launch a Jupyter Notebook and perform these commands in notebook cells.
-
-#### Command-line on Mac
-
-The first step on a Mac is to ensure that a Python (version 3.10 - 3.14) is installed along with a `pip` package.
-If you are using [Homebrew](https://brew.sh) as your package manager, these packages can be installed by doing this command in a `Terminal` window (or your favorite alternative to a `bash` shell):
-
-```bash
-$ brew install python3
-```
-
-#### Command-line on Linux
-
-The first step on a native Linux platform is to ensure that a Python (version 3.10 - 3.14) is installed.
-For those distributions that use RPM and the `yum` package manager:
-
-```bash
-$ sudo yum install python3 python3-devel python3-pip
-```
-
-On debian-based systems with the `apt` package manager:
-
-```bash
-$ sudo apt install python3 python3-dev python3-pip
-```
-
-After these O/S packages are installed, the Python packages can be installed:
-
-```bash
-$ pip install --upgrade grpcio jupyter pandas protobuf xgt
-```
-
-On a system that manages its Python packages, pip may refuse to install into it.
-A virtual environment is the usual answer:
-
-```bash
-$ python3 -m venv xgt-env
-$ source xgt-env/bin/activate
-$ pip install --upgrade grpcio jupyter pandas protobuf xgt
-```
-
-### Server Setup
-
-#### The installer
-
-The quickest way to get a server running is the
-[Rocketgraph installer](https://github.com/Rocketgraphai/install), which covers
-Windows, macOS and Linux. It brings its own dependencies, including Docker, sets
-the containers going and opens
+The [Rocketgraph installer](https://github.com/Rocketgraphai/install) covers
+Windows, macOS and Linux. It brings its own dependencies, including Docker,
+starts the containers and opens
 [Mission Control](https://rocketgraph.com/introduction-to-mission-control/) in
-your browser when it is done.
+your browser when it finishes.
 
 On Linux or macOS that is one command:
 
@@ -97,16 +35,48 @@ On Linux or macOS that is one command:
 $ curl -sSL https://install.rocketgraph.com/install.sh | sh
 ```
 
-Windows and macOS have graphical installers, listed in that repository.
+Windows and macOS also have graphical installers, listed in that repository.
 
-#### On AWS
+### Install the client
+
+The client runs from any Python 3.10 to 3.14 environment, including Jupyter
+Notebook and Jupyter Lab:
+
+```bash
+$ pip install --upgrade grpcio jupyter pandas protobuf xgt
+```
+
+If you need a Python first, [anaconda](https://anaconda.org/) brings one along
+with Jupyter. Otherwise `brew install python3` on macOS, `sudo apt install
+python3 python3-dev python3-pip` on debian-based systems, or `sudo yum install
+python3 python3-devel python3-pip` where `yum` is the package manager.
+
+On a system that manages its own Python packages, pip may refuse to install into
+it. A virtual environment is the usual answer:
+
+```bash
+$ python3 -m venv xgt-env
+$ source xgt-env/bin/activate
+$ pip install --upgrade grpcio jupyter pandas protobuf xgt
+```
+
+## Demos
+
+There are several [demo notebooks](demos/) available within this repo.
+
+## Other ways to run a server
+
+The installer above is the shortest path. These remain for the cases it does not
+cover.
+
+### On AWS
 
 1.  Running xGT on your own AWS instances from the [AWS Marketplace](https://aws.amazon.com/marketplace).
     * This process requires subscribing to the [Rocketgraph xGT product](https://aws.amazon.com/marketplace/pp/B09QXZBS55). 
     * All AWS instances with 8 vCPUs or fewer are free for the software; AWS charges for the hardware may apply.
     * See [Instructions for launching on the AWS Marketplace](AWS/Marketplace.md).
 
-#### On your own systems
+### On your own systems
 
 1.  A docker daemon running on your platform (on-premises).
     * Any x86 system running docker can be used.
