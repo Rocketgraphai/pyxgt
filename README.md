@@ -39,12 +39,6 @@ Once installed, open an "anaconda prompt" window and run these commands:
 pip install --upgrade grpcio jupyter pandas protobuf xgt
 ```
 
-If an AWS instance will be used for running the Rocketgraph xGT server, then you should also do this command:
-
-```Python
-pip install --upgrade boto3
-```
-
 An alternative to the anaconda prompt/command-line method, is to launch a Jupyter Notebook and perform these commands in notebook cells.
 
 #### Command-line on Mac
@@ -74,7 +68,7 @@ $ sudo apt install python3 python3-dev python3-pip
 After these O/S packages are installed, the Python packages can be installed:
 
 ```bash
-$ pip install --upgrade boto3 grpcio jupyter pandas protobuf xgt
+$ pip install --upgrade grpcio jupyter pandas protobuf xgt
 ```
 
 On a system that manages its Python packages, pip may refuse to install into it.
@@ -83,7 +77,7 @@ A virtual environment is the usual answer:
 ```bash
 $ python3 -m venv xgt-env
 $ source xgt-env/bin/activate
-$ pip install --upgrade boto3 grpcio jupyter pandas protobuf xgt
+$ pip install --upgrade grpcio jupyter pandas protobuf xgt
 ```
 
 ### Server Setup
@@ -111,10 +105,6 @@ Windows and macOS have graphical installers, listed in that repository.
     * This process requires subscribing to the [Rocketgraph xGT product](https://aws.amazon.com/marketplace/pp/B09QXZBS55). 
     * All AWS instances with 8 vCPUs or fewer are free for the software; AWS charges for the hardware may apply.
     * See [Instructions for launching on the AWS Marketplace](AWS/Marketplace.md).
-1.  An AWS cloud instance running xGT.
-    * The instance is run in your own account and is set up using this [cloudformation](AWS/cfxgt.json).
-    * Launching requires use of the [boto3](https://pypi.org/project/boto3/) Python package.
-    * [Launch AWS EC2](AWS/launchxGT.ipynb)
 
 #### On your own systems
 
